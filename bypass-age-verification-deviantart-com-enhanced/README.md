@@ -8,6 +8,8 @@
 
 [javascript - Run Greasemonkey script on the same page, multiple times? - Stack Overflow](https://stackoverflow.com/questions/11195658/run-greasemonkey-script-on-the-same-page-multiple-times/11197969#11197969)
 
+[javascript - <a> script links without href="#" - Stack Overflow](https://stackoverflow.com/questions/11144653/a-script-links-without-href)
+
 ```
 magick -background black -fill #00E59B -size 64x64 -gravity center label:"N S\nF W" test.png
 ```

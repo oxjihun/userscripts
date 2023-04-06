@@ -33,7 +33,7 @@
     }
 
     if (sensitive_content) {
-        sensitive_content.href = "";
+        sensitive_content.href = "#";
         sensitive_content.innerText = "Getting Image URL...";
         change_color(sensitive_content, "#ff815f");
         jsonp(
