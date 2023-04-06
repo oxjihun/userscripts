@@ -7,3 +7,7 @@
 [javascript - My userscript only works when the page is refreshed or on iframes, not the main page? - Stack Overflow](https://stackoverflow.com/questions/17862394/my-userscript-only-works-when-the-page-is-refreshed-or-on-iframes-not-the-main)
 
 [javascript - Run Greasemonkey script on the same page, multiple times? - Stack Overflow](https://stackoverflow.com/questions/11195658/run-greasemonkey-script-on-the-same-page-multiple-times/11197969#11197969)
+
+```
+magick -background black -fill #00E59B -size 64x64 -gravity center label:"N S\nF W" test.png
+```
