@@ -21,19 +21,18 @@
         document.body.appendChild(script);
     }
 
-    window.onload = () => {
-        var sensitive_content = document.querySelector(
-            "[data-hook='art_stage'] > div > div > div:nth-child(2) > div > div:nth-child(2) > a"
+    var sensitive_content = document.querySelector(
+        "[data-hook='art_stage'] > div > div > div:nth-child(2) > div > div:nth-child(2) > a"
+    );
+    if (sensitive_content) {
+        sensitive_content.innerText = "Getting Image URL...";
+        jsonp(
+            "http://backend.deviantart.com/oembed?url=" +
+                encodeURIComponent(document.URL.split("?")[0]),
+            function (data) {
+                sensitive_content.href = data["url"];
+                sensitive_content.innerText = "Open Image URL";
+            }
         );
-        if (sensitive_content) {
-            jsonp(
-                "http://backend.deviantart.com/oembed?url=" +
-                    encodeURIComponent(document.URL.split("?")[0]),
-                function (data) {
-                    sensitive_content.href = data["url"];
-                    sensitive_content.innerText = "Unlock";
-                }
-            );
-        }
-    };
+    }
 })();
