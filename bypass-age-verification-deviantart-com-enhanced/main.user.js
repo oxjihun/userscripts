@@ -26,17 +26,23 @@
     var sensitive_content = document.querySelector(
         "[data-hook='art_stage'] > div > div > div:nth-child(2) > div > div:nth-child(2) > a"
     );
+
+    function change_color(elem, color) {
+        elem.style["color"] = color;
+        elem.style["border-color"] = color;
+    }
+
     if (sensitive_content) {
         sensitive_content.href = "";
         sensitive_content.innerText = "Getting Image URL...";
+        change_color(sensitive_content, "#ff815f");
         jsonp(
             "http://backend.deviantart.com/oembed?url=" +
                 encodeURIComponent(document.URL.split("?")[0]),
             function (data) {
-                sensitive_content.href = data["url"];
+                sensitive_content.href = data.url;
                 sensitive_content.innerText = "Open Image URL";
-                sensitive_content.style["color"] = "#00E59B";
-                sensitive_content.style["border-color"] = "#00E59B";
+                change_color(sensitive_content, "#00E59B");
             }
         );
     }
