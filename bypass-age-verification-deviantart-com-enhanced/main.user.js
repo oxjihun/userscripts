@@ -35,6 +35,8 @@
             function (data) {
                 sensitive_content.href = data["url"];
                 sensitive_content.innerText = "Open Image URL";
+                sensitive_content.style["color"] = "#00E59B";
+                sensitive_content.style["border-color"] = "#00E59B";
             }
         );
     }
