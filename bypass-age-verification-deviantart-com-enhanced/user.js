@@ -25,6 +25,7 @@
         "[data-hook='art_stage'] > div > div > div:nth-child(2) > div > div:nth-child(2) > a"
     );
     if (sensitive_content) {
+        sensitive_content.href = "";
         sensitive_content.innerText = "Getting Image URL...";
         jsonp(
             "http://backend.deviantart.com/oembed?url=" +
