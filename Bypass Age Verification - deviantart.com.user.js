@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name        Bypass Age Verification - deviantart.com
-// @namespace   Prodbydie Script
-// @match       put here your deviantart link
+// @name        Bypass Age Verification - deviantart.com (enhanced)
+// @namespace   https://github.com/oxjihun/userscripts
+// @match       https://www.deviantart.com/*
 // @grant       none
 // @version     1.0
-// @author      Prodbydie
-// @description Bypass age request for NSFW content on Deviantart.
+// @author      oxjihun
+// @description Bypass age request for NSFW content on Deviantart; now, user doesn't have to manually edit @match. This is a fork of another wonderful script (https://greasyfork.org/scripts/393525)
 // ==/UserScript==
 (function() {
 	function jsonp(url, callback) {
