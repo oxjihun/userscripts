@@ -27,22 +27,26 @@
         "[data-hook='art_stage'] > div > div > div:nth-child(2) > div > div:nth-child(2) > a"
     );
 
-    function change_color(elem, color) {
-        elem.style["color"] = color;
-        elem.style["border-color"] = color;
+    const NULL_HREF = "javascript:void(0)";
+
+    function update_button(color, href, innerText) {
+        sensitive_content.style["color"] = color;
+        sensitive_content.style["border-color"] = color;
+        sensitive_content.href = href;
+        sensitive_content.innerText = innerText;
     }
 
     if (sensitive_content) {
-        sensitive_content.href = "javascript:void(0)";
-        sensitive_content.innerText = "Getting Image URL...";
-        change_color(sensitive_content, "#ff815f");
+        update_button("#FFB35C", NULL_HREF, "Finding URL...");
         jsonp(
             "http://backend.deviantart.com/oembed?url=" +
                 encodeURIComponent(document.URL.split("?")[0]),
             function (data) {
-                sensitive_content.href = data.url;
-                sensitive_content.innerText = "Open Image URL";
-                change_color(sensitive_content, "#00E59B");
+                if (new URL(data.url).hostname == "www.deviantart.com") {
+                    update_button("white", NULL_HREF, "Failed to find URL");
+                } else {
+                    update_button("#00E59B", data.url, "Open URL");
+                }
             }
         );
     }

@@ -10,6 +10,8 @@
 
 [javascript - <a> script links without href="#" - Stack Overflow](https://stackoverflow.com/questions/11144653/a-script-links-without-href)
 
+[How to get the domain name from a URL in JavaScript - w3collective](https://w3collective.com/get-domain-name-url-javascript/)
+
 ```
 magick -background black -fill #00E59B -size 64x64 -gravity center label:"N S\nF W" test.png
 ```
