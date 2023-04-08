@@ -16,12 +16,13 @@
         elem.innerText = parseInt(elem.innerText);
     }
 
-    var observer;
+    var page_div, observer;
     function find_page_div_and_watch() {
-        const page_div = document.querySelector(
+        const new_page_div = document.querySelector(
             "div[aria-label] > div[style='bottom: 0px; top: 0px;'] > div:nth-child(3) > div[aria-label]"
         );
-        if (page_div) {
+        if (!Object.is(page_div, new_page_div)) {
+            page_div = new_page_div;
             if (observer && observer.disconnect) {
                 observer.disconnect();
             }
