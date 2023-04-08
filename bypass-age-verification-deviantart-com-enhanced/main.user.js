@@ -23,20 +23,20 @@
         document.body.appendChild(script);
     }
 
-    var sensitive_content = document.querySelector(
+    var filter_button = document.querySelector(
         "[data-hook='art_stage'] > div > div > div:nth-child(2) > div > div:nth-child(2) > a"
     );
 
     const NULL_HREF = "javascript:void(0)";
 
     function update_button(color, href, innerText) {
-        sensitive_content.style["color"] = color;
-        sensitive_content.style["border-color"] = color;
-        sensitive_content.href = href;
-        sensitive_content.innerText = innerText;
+        filter_button.style["color"] = color;
+        filter_button.style["border-color"] = color;
+        filter_button.href = href;
+        filter_button.innerText = innerText;
     }
 
-    if (sensitive_content) {
+    if (filter_button) {
         update_button("#FFB35C", NULL_HREF, "Finding URL...");
         jsonp(
             "http://backend.deviantart.com/oembed?url=" +
