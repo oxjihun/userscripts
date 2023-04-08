@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Auto Dark Mode for PuzzleTeam Websites
-// @namespace    https://github.com/oxjihun
+// @namespace    https://github.com/oxjihun/userscripts
 // @version      0.1
 // @description  Detects OS's mode and alters theme setting for PuzzleTeam websites. Heavily based on this Stack Overflow answer: https://stackoverflow.com/a/57795518
-// @author       https://github.com/oxjihun
+// @author       oxjihun
 // @match        https://*.puzzles-mobile.com/*
 // @match        https://*.puzzle-norinori.com/*
 // @match        https://*.puzzle-minesweeper.com/*
@@ -42,18 +42,20 @@
 // @grant        none
 // ==/UserScript==
 
-var switcher;
-if (new URL(location.href).hostname.slice(-18) === "puzzles-mobile.com") {
-    switcher = Layout.switchNightMode;
-} else {
-    switcher = switchNightMode;
-}
-switcher(
-    window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-);
-window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", (e) => {
-        switcher(e.matches);
-    });
+(function () {
+    var switcher;
+    if (new URL(location.href).hostname.slice(-18) === "puzzles-mobile.com") {
+        switcher = Layout.switchNightMode;
+    } else {
+        switcher = switchNightMode;
+    }
+    switcher(
+        window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+    );
+    window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (e) => {
+            switcher(e.matches);
+        });
+})();
